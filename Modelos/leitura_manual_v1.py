@@ -12,19 +12,44 @@ from PyPDF2 import PdfReader
 from sentence_transformers import SentenceTransformer
 import requests
 
-# 1. Ler manual PDF
-pdf_filename = "prototipo_rag_manual\\manuais\\exemplo_manual_impressora_3d.pdf"  # Altere se necessário
-def extrair_texto_pdf(filename):
-    texto = ""
-    with open(filename, 'rb') as f:
-        reader = PdfReader(f)
-        for page in reader.pages:
-            texto += page.extract_text() + "\n"
-    return texto
+import os
+from pypdf import PdfReader
 
-print("Lendo o manual PDF...")
-texto_manual = extrair_texto_pdf(pdf_filename)
-print("PDF lido.")
+pasta_manuais = "prototipo_rag_manual\\manuais"
+
+def extrair_texto_pdf(pasta):
+    textos = ""
+
+    arquivos = [
+        arquivo for arquivo in os.listdir(pasta)
+        if arquivo.lower().endswith(".pdf")
+    ]
+
+    for arquivo in arquivos:
+        caminho = os.path.join(pasta, arquivo)
+
+        print(f"Lendo: {arquivo}")
+
+        with open(caminho, 'rb') as f:
+            reader = PdfReader(f)
+
+            for page in reader.pages:
+                texto = page.extract_text()
+
+                if texto:
+                    textos += texto + "\n"
+
+        textos += "\n--- FIM DO DOCUMENTO ---\n\n"
+
+    return textos
+
+
+print("Lendo os manuais PDF...")
+
+texto_manual = extrair_texto_pdf(pasta_manuais)
+
+print("PDFs lidos.")
+print(f"Total de caracteres: {len(texto_manual)}")
 
 # 2. Dividir em chunks
 def dividir_em_chunks(texto, tamanho_chunk=400, sobreposicao=100):
