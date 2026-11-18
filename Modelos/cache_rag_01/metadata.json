@@ -1,0 +1,14 @@
+{
+    "embedding_model": "all-MiniLM-L6-v2",
+    "tamanho_chunk": 400,
+    "sobreposicao": 100,
+    "documentos": {
+        "Antiguidade Clássica — Grécia_ Pólis, Democracia, Cultura e Escravidão (1).pdf": "7fe24ccee3b4a45d11186d3a3ff404cde11f2be264e3d5f51ddfaaf39934e029",
+        "Antiguidade Clássica — Roma_ República, Império, Expansão e Crise.pdf": "1305acc4123859c12fab0d2e109ba1f5413df3faf0a9a3227f8c7e12fa6abeb7",
+        "Antiguidade Oriental — Mesopotâmia e Egito Antigo.pdf": "17b04ba9d4b8f4309d808fb10c78ba3b46bb1328a5a9cf037b77c247bb6223b3",
+        "historia antiga.pdf": "68c499ebb3f590c1bfb1601125a0de1823a99b88e78a3262d85aeaad8b72509f",
+        "Legados Políticos, Culturais e Jurídicos da Antiguidade.pdf": "a7493cf61ab79591d5767bcc39ded4898ade50c87173b2cd451dd6035e6dd740",
+        "listaAntiguidade.pdf": "ea524762b1be318f0a3260cebddc271e59b2aaea1ac2a3fef3f081bac3dd2523",
+        "Me Salva Apostila Historia ENEM1.pdf": "bd3a4b47a7aae1289400f1584fd391b096a4b1b035db690e118e632ba7a1b749"
+    }
+}
